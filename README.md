@@ -75,8 +75,20 @@ class UserController extends Controller
 }
 ```
 
+#### the routes
+```php
+// api.php
+
+// Routes
+Route::post('/passport/reg',[UserController::class,'registration']);
+Route::post('/passport/login',[UserController::class,'login']);
+Route::get('/passport/login',[UserController::class,'login']);
+```
+
 #### Securing the routes with : passport
 ```php
+// api.php
+
 // Route::get('/rest-apis',[UserController::class,'restapis']);
 Route::middleware('auth:api')->get('/rest-apis',[UserController::class,'restapis']);
 ```
